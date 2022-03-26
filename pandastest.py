@@ -10,25 +10,31 @@ import numpy as np
 
 def max_number (n,x):
     negative= False
-    if int(n)<0:
-        negative = True
     nstr = str(abs(int(n)))
     xstr = str(x)
+    
+    if int(n)<0:
+        negative = True
+        
     possibility = []
     possibility.extend([int(xstr+nstr),int(nstr+xstr)])
+    
     for i in range(len(nstr)):
-        if i<len(nstr)-1:
+        if (i<len(nstr)-1) and (len(nstr)>1):
             possibility.append(int(nstr[:i+1]+xstr+nstr[i+1:]))
-    print(possibility)
-        
-
     
+    print("absolutes of possibilities are", possibility)
+        
     if negative == False:
-        print(max(possibility))
+        print("Maximum is: ",max(possibility))
     else:
-        print(min(possibility))
+        print("Maximum is: ", min(possibility))
         
     
     
 
-max_number("-956",2)
+max_number("0",2)
+print("==================")
+max_number("23", 5)
+print("==================")
+max_number("-458", 3)
