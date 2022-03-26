@@ -15,14 +15,13 @@ def max_number (n,x):
     nstr = str(abs(int(n)))
     xstr = str(x)
     possibility = []
-    possibility.extend([xstr+nstr,nstr+xstr])
+    possibility.extend([int(xstr+nstr),int(nstr+xstr)])
     for i in range(len(nstr)):
         if i<len(nstr)-1:
-            possibility.append(nstr[:i+1]+xstr+nstr[i+1:])
+            possibility.append(int(nstr[:i+1]+xstr+nstr[i+1:]))
     print(possibility)
         
-    for i in range(len(possibility)):
-        possibility[i] = int(possibility[i])
+
     
     if negative == False:
         print(max(possibility))
