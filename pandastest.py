@@ -28,7 +28,7 @@ def max_number (n,x):
     if negative == False:
         print("Maximum is: ",max(possibility))
     else:
-        print("Maximum is: ", min(possibility))
+        print("Maximum is: ",-1* min(possibility))
         
     
     
